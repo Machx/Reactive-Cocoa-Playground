@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Reactive Cocoa Playground' target in the 'Reactive Cocoa Playground' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
