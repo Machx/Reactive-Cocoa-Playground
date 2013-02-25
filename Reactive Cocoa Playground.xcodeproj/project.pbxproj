@@ -17,6 +17,7 @@
 		B85DF82616DAD1470008FB97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DF80616DAD1460008FB97 /* Cocoa.framework */; };
 		B85DF82E16DAD1470008FB97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B85DF82C16DAD1470008FB97 /* InfoPlist.strings */; };
 		B85DF83116DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B85DF83016DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m */; };
+		B8B4B62216DAF2B500F6830C /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B85DF82D16DAD1470008FB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B85DF82F16DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reactive_Cocoa_PlaygroundTests.h; sourceTree = "<group>"; };
 		B85DF83016DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reactive_Cocoa_PlaygroundTests.m; sourceTree = "<group>"; };
+		B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = ReactiveCocoa.framework; path = External/ReactiveCocoa/ReactiveCocoaFramework/build/Release/ReactiveCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B4B62216DAF2B500F6830C /* ReactiveCocoa.framework in Frameworks */,
 				B85DF80716DAD1460008FB97 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +97,7 @@
 		B85DF80516DAD1460008FB97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */,
 				B85DF80616DAD1460008FB97 /* Cocoa.framework */,
 				B85DF82416DAD1470008FB97 /* SenTestingKit.framework */,
 				B85DF80816DAD1460008FB97 /* Other Frameworks */,
@@ -453,6 +457,7 @@
 				B85DF83616DAD1470008FB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B85DF83716DAD1470008FB97 /* Build configuration list for PBXNativeTarget "Reactive Cocoa PlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +466,7 @@
 				B85DF83916DAD1470008FB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
