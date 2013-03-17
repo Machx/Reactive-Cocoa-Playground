@@ -9,6 +9,10 @@
 #import "RCPTaskViewController.h"
 #import "NSTask+RACSupport.h"
 
+@interface RCPTaskViewController ()
+@property(nonatomic, retain) NSTask *task;
+@end
+
 @implementation RCPTaskViewController
 
 - (id)init
@@ -24,7 +28,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
         // Initialization code here.
     }
@@ -33,20 +37,25 @@
 }
 
 -(void)awakeFromNib {
-	NSTask *task = [[NSTask alloc] init];
-	[task setLaunchPath:@"/bin/ls"];
-	[task setStandardOutput:[NSPipe pipe]];
-	[task setLaunchPath:NSHomeDirectory()];
+	self.task = [[NSTask alloc] init];
+	[self.task setLaunchPath:@"/bin/ls"];
+	[self.task setStandardOutput:[NSPipe pipe]];
+	[self.task setStandardError:[NSPipe pipe]];
+	[self.task setCurrentDirectoryPath:NSHomeDirectory()];
 	
-	[task.rac_standardOutput subscribeNext:^(id x) {
-		NSLog(@"Task Output: %@",x);
+	[self.task.rac_standardOutput subscribeNext:^(id x) {
+		NSString *result = [[NSString alloc] initWithData:x
+												 encoding:NSUTF8StringEncoding];
+		NSLog(@"Task Output: %@",result);
 	}];
 	
-	[task.rac_standardError subscribeNext:^(id x) {
-		NSLog(@"Task Error: %@",x);
+	[self.task.rac_standardError subscribeNext:^(id x) {
+		NSString *result = [[NSString alloc] initWithData:x
+												 encoding:NSUTF8StringEncoding];
+		NSLog(@"Task Error: %@",result);
 	}];
 	
-	[task launch];
+	[self.task launch];
 }
 
 @end
