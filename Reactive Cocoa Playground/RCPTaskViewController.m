@@ -7,6 +7,7 @@
 //
 
 #import "RCPTaskViewController.h"
+#import "NSTask+RACSupport.h"
 
 @implementation RCPTaskViewController
 
@@ -32,9 +33,20 @@
 }
 
 -(void)awakeFromNib {
-//	NSTask *task = [[NSTask alloc] init];
-//	[task setLaunchPath:@"/bin/ls"];
-//	[task setStandardOutput:[NSPipe pipe]];
+	NSTask *task = [[NSTask alloc] init];
+	[task setLaunchPath:@"/bin/ls"];
+	[task setStandardOutput:[NSPipe pipe]];
+	[task setLaunchPath:NSHomeDirectory()];
+	
+	[task.rac_standardOutput subscribeNext:^(id x) {
+		NSLog(@"Task Output: %@",x);
+	}];
+	
+	[task.rac_standardError subscribeNext:^(id x) {
+		NSLog(@"Task Error: %@",x);
+	}];
+	
+	[task launch];
 }
 
 @end
