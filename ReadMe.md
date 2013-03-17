@@ -2,6 +2,8 @@
 
 This project is a collection of useful and sometimes experimental ReactiveCocoa code. 
 
+When opening this open the ReactiveCocoa Playground workspace instead of the Xcode Project file.
+
 ## License
 
 All ReactiveCocoa Playground Code is licensed under the MIT License

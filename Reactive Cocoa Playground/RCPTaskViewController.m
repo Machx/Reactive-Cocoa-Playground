@@ -35,8 +35,6 @@
 //	NSTask *task = [[NSTask alloc] init];
 //	[task setLaunchPath:@"/bin/ls"];
 //	[task setStandardOutput:[NSPipe pipe]];
-//	
-//	task.rac_
 }
 
 @end
