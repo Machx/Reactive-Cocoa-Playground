@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81E6DE116F3712400EC38CB /* RCPMenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B81E6DE016F3712400EC38CB /* RCPMenuViewModel.m */; };
+		B81E6DE516F381BB00EC38CB /* RCPNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81E6DE316F381BB00EC38CB /* RCPNetworkViewController.m */; };
+		B81E6DE616F381BB00EC38CB /* RCPNetworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B81E6DE416F381BB00EC38CB /* RCPNetworkViewController.xib */; };
+		B81E6DEC16F38EC300EC38CB /* RCPTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81E6DEA16F38EC300EC38CB /* RCPTaskViewController.m */; };
+		B81E6DED16F38EC300EC38CB /* RCPTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B81E6DEB16F38EC300EC38CB /* RCPTaskViewController.xib */; };
 		B85DF80716DAD1460008FB97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DF80616DAD1460008FB97 /* Cocoa.framework */; };
 		B85DF81116DAD1460008FB97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B85DF80F16DAD1460008FB97 /* InfoPlist.strings */; };
 		B85DF81316DAD1460008FB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B85DF81216DAD1460008FB97 /* main.m */; };
@@ -31,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B81E6DDF16F3712400EC38CB /* RCPMenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPMenuViewModel.h; sourceTree = "<group>"; };
+		B81E6DE016F3712400EC38CB /* RCPMenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPMenuViewModel.m; sourceTree = "<group>"; };
+		B81E6DE216F381BB00EC38CB /* RCPNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPNetworkViewController.h; sourceTree = "<group>"; };
+		B81E6DE316F381BB00EC38CB /* RCPNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPNetworkViewController.m; sourceTree = "<group>"; };
+		B81E6DE416F381BB00EC38CB /* RCPNetworkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPNetworkViewController.xib; sourceTree = "<group>"; };
+		B81E6DE916F38EC300EC38CB /* RCPTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPTaskViewController.h; sourceTree = "<group>"; };
+		B81E6DEA16F38EC300EC38CB /* RCPTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPTaskViewController.m; sourceTree = "<group>"; };
+		B81E6DEB16F38EC300EC38CB /* RCPTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPTaskViewController.xib; sourceTree = "<group>"; };
 		B85DF80316DAD1460008FB97 /* Reactive Cocoa Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactive Cocoa Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85DF80616DAD1460008FB97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B85DF80916DAD1460008FB97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,7 +63,7 @@
 		B85DF82D16DAD1470008FB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B85DF82F16DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reactive_Cocoa_PlaygroundTests.h; sourceTree = "<group>"; };
 		B85DF83016DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reactive_Cocoa_PlaygroundTests.m; sourceTree = "<group>"; };
-		B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = ReactiveCocoa.framework; path = External/ReactiveCocoa/ReactiveCocoaFramework/build/Release/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = External/ReactiveCocoa/ReactiveCocoaFramework/build/Release/ReactiveCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B81E6DE716F38DFF00EC38CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B81E6DE216F381BB00EC38CB /* RCPNetworkViewController.h */,
+				B81E6DE316F381BB00EC38CB /* RCPNetworkViewController.m */,
+				B81E6DE416F381BB00EC38CB /* RCPNetworkViewController.xib */,
+				B81E6DE916F38EC300EC38CB /* RCPTaskViewController.h */,
+				B81E6DEA16F38EC300EC38CB /* RCPTaskViewController.m */,
+				B81E6DEB16F38EC300EC38CB /* RCPTaskViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B81E6DE816F38E1C00EC38CB /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				B81E6DDF16F3712400EC38CB /* RCPMenuViewModel.h */,
+				B81E6DE016F3712400EC38CB /* RCPMenuViewModel.m */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
 		B85DF7FA16DAD1460008FB97 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +156,8 @@
 				B85DF81816DAD1460008FB97 /* CWNTAppDelegate.h */,
 				B85DF81916DAD1460008FB97 /* CWNTAppDelegate.m */,
 				B85DF81B16DAD1470008FB97 /* MainMenu.xib */,
+				B81E6DE816F38E1C00EC38CB /* View Models */,
+				B81E6DE716F38DFF00EC38CB /* ViewControllers */,
 				B85DF80D16DAD1460008FB97 /* Supporting Files */,
 			);
 			path = "Reactive Cocoa Playground";
@@ -232,6 +269,8 @@
 				B85DF81116DAD1460008FB97 /* InfoPlist.strings in Resources */,
 				B85DF81716DAD1460008FB97 /* Credits.rtf in Resources */,
 				B85DF81D16DAD1470008FB97 /* MainMenu.xib in Resources */,
+				B81E6DE616F381BB00EC38CB /* RCPNetworkViewController.xib in Resources */,
+				B81E6DED16F38EC300EC38CB /* RCPTaskViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +307,9 @@
 			files = (
 				B85DF81316DAD1460008FB97 /* main.m in Sources */,
 				B85DF81A16DAD1460008FB97 /* CWNTAppDelegate.m in Sources */,
+				B81E6DE116F3712400EC38CB /* RCPMenuViewModel.m in Sources */,
+				B81E6DE516F381BB00EC38CB /* RCPNetworkViewController.m in Sources */,
+				B81E6DEC16F38EC300EC38CB /* RCPTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
