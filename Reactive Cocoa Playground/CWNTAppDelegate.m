@@ -15,6 +15,9 @@
 @property(nonatomic,retain) RCPMenuViewModel *viewModel;
 @property(nonatomic, weak) IBOutlet NSPopUpButton *menuButton;
 @property(nonatomic, weak) IBOutlet NSBox *viewBox;
+//View Controllers
+@property(nonatomic, retain) RCPNetworkViewController *networkController;
+@property(nonatomic, retain) RCPTaskViewController *taskController;
 @end
 
 @implementation CWNTAppDelegate
@@ -41,18 +44,22 @@
 		NSUInteger selectedIndex = button.indexOfSelectedItem;
 		if (selectedIndex == 0) {
 			//Load Network
-			RCPNetworkViewController*controller = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
-			[bself.viewBox setContentView:controller.view];
+			if (!bself.networkController) {
+				bself.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
+			}
+			[bself.viewBox setContentView:bself.networkController.view];
 			
 		} else if (selectedIndex == 1) {
 			//Load Task
-			RCPTaskViewController *controller = [[RCPTaskViewController alloc] init];
-			[bself.viewBox setContentView:controller.view];
+			if (!bself.taskController) {
+				bself.taskController = [[RCPTaskViewController alloc] init];
+			}
+			[bself.viewBox setContentView:bself.taskController.view];
 		}
 	}];
 	
-	RCPNetworkViewController *controller = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
-	[self.viewBox setContentView:controller.view];
+	self.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
+	[self.viewBox setContentView:self.networkController.view];
 }
 
 @end
