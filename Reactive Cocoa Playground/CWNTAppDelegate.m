@@ -10,6 +10,7 @@
 #import "RCPMenuViewModel.h"
 #import "RCPNetworkViewController.h"
 #import "RCPTaskViewController.h"
+#import "RCPLoginExampleViewController.h"
 
 @interface CWNTAppDelegate ()
 @property(nonatomic,retain) RCPMenuViewModel *viewModel;
@@ -18,6 +19,7 @@
 //View Controllers
 @property(nonatomic, retain) RCPNetworkViewController *networkController;
 @property(nonatomic, retain) RCPTaskViewController *taskController;
+@property(nonatomic, retain) RCPLoginExampleViewController *loginViewController;
 @end
 
 @implementation CWNTAppDelegate
@@ -55,6 +57,12 @@
 				bself.taskController = [[RCPTaskViewController alloc] init];
 			}
 			[bself.viewBox setContentView:bself.taskController.view];
+		} else if (selectedIndex == 2) {
+			//Load Login Example
+			if (!bself.loginViewController) {
+				bself.loginViewController = [[RCPLoginExampleViewController alloc] init];
+			}
+			[bself.viewBox setContentView:bself.loginViewController.view];
 		}
 	}];
 	

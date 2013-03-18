@@ -16,7 +16,8 @@
     if (!self) return nil;
 	
 	_activities = @[ @"Load Network",
-				 @"Load Task"
+				 @"Load Task",
+				  @"Load Login Example"
 				 ];
 	
     return self;
