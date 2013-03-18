@@ -57,7 +57,13 @@
 	
 	self.loginButton.rac_command = [RACCommand commandWithCanExecuteSignal:valid];
 	[self.loginButton.rac_command subscribeNext:^(id x) {
-		NSLog(@"Did execute login...");
+		NSAlert *alert = [NSAlert alertWithMessageText:@"Did login"
+										 defaultButton:@"Okay"
+									   alternateButton:nil
+										   otherButton:nil
+							 informativeTextWithFormat:[NSString stringWithFormat:@"Did login with %@ : %@",bself.viewModel.login,
+														bself.viewModel.password]];
+		[alert runModal];
 	}];
 }
 
