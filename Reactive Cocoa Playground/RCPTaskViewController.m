@@ -11,7 +11,7 @@
 
 @interface RCPTaskViewController ()
 @property(nonatomic, retain) NSTask *task;
-@property(nonatomic, retain) NSMutableString *results;
+@property(atomic, retain) NSMutableString *results;
 @property(nonatomic, unsafe_unretained) IBOutlet NSTextView *resultsTextView;
 @end
 
@@ -39,6 +39,9 @@
 }
 
 -(void)awakeFromNib {
+	[self.resultsTextView setFont:[NSFont fontWithName:@"Menlo" size:12.0]];
+	[self.resultsTextView setAutomaticSpellingCorrectionEnabled:NO];
+	
 	__block RCPTaskViewController *bself = self;
 	
 	bself.task = [[NSTask alloc] init];

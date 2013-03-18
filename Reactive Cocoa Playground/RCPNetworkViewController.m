@@ -34,6 +34,9 @@
 }
 
 -(void)awakeFromNib {
+	[self.resultsField setFont:[NSFont fontWithName:@"Menlo" size:12.0]];
+	[self.resultsField setAutomaticSpellingCorrectionEnabled:NO];
+	
 	__block RCPNetworkViewController *bself = self;
 	[[[self networkLoad] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
 		[bself.resultsField setString:x];
