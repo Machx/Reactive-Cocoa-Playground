@@ -61,8 +61,8 @@
 										 defaultButton:@"Okay"
 									   alternateButton:nil
 										   otherButton:nil
-							 informativeTextWithFormat:[NSString stringWithFormat:@"Did login with %@ : %@",bself.viewModel.login,
-														bself.viewModel.password]];
+							 informativeTextWithFormat:@"Did login with %@ : %@",bself.viewModel.login,
+														bself.viewModel.password];
 		[alert runModal];
 	}];
 }
