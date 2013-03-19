@@ -114,17 +114,9 @@
 		B81E6DE716F38DFF00EC38CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B81E6DE216F381BB00EC38CB /* RCPNetworkViewController.h */,
-				B81E6DE316F381BB00EC38CB /* RCPNetworkViewController.m */,
-				B81E6DE416F381BB00EC38CB /* RCPNetworkViewController.xib */,
-				B81E6DE916F38EC300EC38CB /* RCPTaskViewController.h */,
-				B81E6DEA16F38EC300EC38CB /* RCPTaskViewController.m */,
-				B81E6DEB16F38EC300EC38CB /* RCPTaskViewController.xib */,
-				B8310E2816F75BFD00BCEFF0 /* RCPLoginViewModel.h */,
-				B8310E2916F75BFD00BCEFF0 /* RCPLoginViewModel.m */,
-				B8310E2316F75A0F00BCEFF0 /* RCPLoginExampleViewController.h */,
-				B8310E2416F75A0F00BCEFF0 /* RCPLoginExampleViewController.m */,
-				B8310E2516F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib */,
+				B8310E2B16F77F3A00BCEFF0 /* Network Controller */,
+				B8310E2C16F77F4D00BCEFF0 /* Task Controller */,
+				B8310E2D16F77F5800BCEFF0 /* Login Controller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -136,6 +128,38 @@
 				B81E6DE016F3712400EC38CB /* RCPMenuViewModel.m */,
 			);
 			name = "View Models";
+			sourceTree = "<group>";
+		};
+		B8310E2B16F77F3A00BCEFF0 /* Network Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B81E6DE216F381BB00EC38CB /* RCPNetworkViewController.h */,
+				B81E6DE316F381BB00EC38CB /* RCPNetworkViewController.m */,
+				B81E6DE416F381BB00EC38CB /* RCPNetworkViewController.xib */,
+			);
+			name = "Network Controller";
+			sourceTree = "<group>";
+		};
+		B8310E2C16F77F4D00BCEFF0 /* Task Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B81E6DE916F38EC300EC38CB /* RCPTaskViewController.h */,
+				B81E6DEA16F38EC300EC38CB /* RCPTaskViewController.m */,
+				B81E6DEB16F38EC300EC38CB /* RCPTaskViewController.xib */,
+			);
+			name = "Task Controller";
+			sourceTree = "<group>";
+		};
+		B8310E2D16F77F5800BCEFF0 /* Login Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B8310E2816F75BFD00BCEFF0 /* RCPLoginViewModel.h */,
+				B8310E2916F75BFD00BCEFF0 /* RCPLoginViewModel.m */,
+				B8310E2316F75A0F00BCEFF0 /* RCPLoginExampleViewController.h */,
+				B8310E2416F75A0F00BCEFF0 /* RCPLoginExampleViewController.m */,
+				B8310E2516F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib */,
+			);
+			name = "Login Controller";
 			sourceTree = "<group>";
 		};
 		B85DF7FA16DAD1460008FB97 = {
