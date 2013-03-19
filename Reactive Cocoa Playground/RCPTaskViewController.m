@@ -8,6 +8,7 @@
 
 #import "RCPTaskViewController.h"
 #import "NSTask+RACSupport.h"
+#import <ReactiveCocoa/EXTScope.h>
 
 @interface RCPTaskViewController ()
 @property(nonatomic, retain) NSTask *task;
@@ -39,29 +40,31 @@
 }
 
 -(void)awakeFromNib {
+	@unsafeify(self);
+	
 	[self.resultsTextView setFont:[NSFont fontWithName:@"Menlo" size:12.0]];
 	[self.resultsTextView setAutomaticSpellingCorrectionEnabled:NO];
 	
-	__block RCPTaskViewController *bself = self;
-	
-	bself.task = [[NSTask alloc] init];
+	self.task = [[NSTask alloc] init];
 	[self.task setLaunchPath:@"/bin/ls"];
 	[self.task setStandardOutput:[NSPipe pipe]];
 	[self.task setStandardError:[NSPipe pipe]];
 	[self.task setCurrentDirectoryPath:NSHomeDirectory()];
 	
 	[self.task.rac_standardOutput subscribeNext:^(id x) {
+		@strongify(self);
 		NSString *result = [[NSString alloc] initWithData:x
 												 encoding:NSUTF8StringEncoding];
-		[bself.results appendString:result];
-		[bself.resultsTextView setString:bself.results];
+		[self.results appendString:result];
+		[self.resultsTextView setString:self.results];
 	}];
 	
 	[self.task.rac_standardError subscribeNext:^(id x) {
+		@strongify(self);
 		NSString *result = [[NSString alloc] initWithData:x
 												 encoding:NSUTF8StringEncoding];
-		[bself.results appendString:result];
-		[bself.resultsTextView setString:bself.results];
+		[self.results appendString:result];
+		[self.resultsTextView setString:self.results];
 	}];
 	
 	[self.task launch];
