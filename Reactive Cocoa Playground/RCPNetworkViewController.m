@@ -7,6 +7,7 @@
 //
 
 #import "RCPNetworkViewController.h"
+#import <ReactiveCocoa/EXTScope.h>
 
 @interface RCPNetworkViewController ()
 @property(nonatomic,unsafe_unretained) IBOutlet NSTextView *resultsField;
@@ -44,7 +45,9 @@
 }
 
 -(RACSignal *)networkLoad {
+	@unsafeify(self);
 	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		@strongify(self);
 		NSError *error;
 		NSString *results = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.url]
 													 encoding:NSUTF8StringEncoding
