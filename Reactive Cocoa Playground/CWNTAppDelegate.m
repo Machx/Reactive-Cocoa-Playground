@@ -7,6 +7,7 @@
 //
 
 #import "CWNTAppDelegate.h"
+#import <ReactiveCocoa/EXTScope.h>
 #import "RCPMenuViewModel.h"
 #import "RCPNetworkViewController.h"
 #import "RCPTaskViewController.h"
@@ -26,43 +27,46 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	__weak CWNTAppDelegate *bself = self;
+	@weakify(self);
 	
 	self.viewModel = [RCPMenuViewModel new];
 	
 	//Menu Button
 	[RACAbleWithStart(self.viewModel.activities) subscribeNext:^(NSArray *x) {
-		[bself.menuButton removeAllItems];
-		[bself.menuButton addItemsWithTitles:x];
-		[bself.menuButton selectItemAtIndex:0];
+		@strongify(self);
+		[self.menuButton removeAllItems];
+		[self.menuButton addItemsWithTitles:x];
+		[self.menuButton selectItemAtIndex:0];
 	}];
 	self.menuButton.rac_command = [RACCommand command];
 	[self.menuButton.rac_command subscribeNext:^(NSPopUpButton *button) {
-		bself.viewModel.selectedItem = bself.viewModel.activities[button.indexOfSelectedItem];
+		@strongify(self);
+		self.viewModel.selectedItem = self.viewModel.activities[button.indexOfSelectedItem];
 	}];
 	
 	//Switch Views
 	[self.menuButton.rac_command subscribeNext:^(NSPopUpButton *button) {
+		@strongify(self);
 		NSUInteger selectedIndex = button.indexOfSelectedItem;
 		if (selectedIndex == 0) {
 			//Load Network
-			if (!bself.networkController) {
-				bself.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
+			if (!self.networkController) {
+				self.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
 			}
-			[bself.viewBox setContentView:bself.networkController.view];
+			[self.viewBox setContentView:self.networkController.view];
 			
 		} else if (selectedIndex == 1) {
 			//Load Task
-			if (!bself.taskController) {
-				bself.taskController = [[RCPTaskViewController alloc] init];
+			if (!self.taskController) {
+				self.taskController = [[RCPTaskViewController alloc] init];
 			}
-			[bself.viewBox setContentView:bself.taskController.view];
+			[self.viewBox setContentView:self.taskController.view];
 		} else if (selectedIndex == 2) {
 			//Load Login Example
-			if (!bself.loginViewController) {
-				bself.loginViewController = [[RCPLoginExampleViewController alloc] init];
+			if (!self.loginViewController) {
+				self.loginViewController = [[RCPLoginExampleViewController alloc] init];
 			}
-			[bself.viewBox setContentView:bself.loginViewController.view];
+			[self.viewBox setContentView:self.loginViewController.view];
 		}
 	}];
 	
