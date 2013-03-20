@@ -17,7 +17,7 @@
 @implementation RCPNetworkViewController
 
 -(id)initWithURLAddress:(NSString *)address {
-	self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+	self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
 	if (!self) return nil;
 	
 	_url = address;
@@ -26,7 +26,7 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
     if (self) {
         // Initialization code here.
     }

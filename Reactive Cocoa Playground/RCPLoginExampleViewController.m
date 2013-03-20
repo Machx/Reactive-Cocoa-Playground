@@ -8,6 +8,7 @@
 
 #import "RCPLoginExampleViewController.h"
 #import "RCPLoginViewModel.h"
+#import <ReactiveCocoa/EXTScope.h>
 
 @interface RCPLoginExampleViewController ()
 @property(nonatomic,weak) IBOutlet NSTextField *loginField;
@@ -19,7 +20,7 @@
 @implementation RCPLoginExampleViewController
 
 -(id)init {
-	self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+	self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
 	if(!self) return nil;
 	
 	_viewModel = [RCPLoginViewModel new];
@@ -29,7 +30,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nibBundleOrNil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
     if (!self) return nil;
 	
 	_viewModel = [RCPLoginViewModel new];
@@ -38,16 +39,18 @@
 }
 
 -(void)awakeFromNib {
-	__block RCPLoginExampleViewController *bself = self;
+	@unsafeify(self);
 	
 	self.loginField.stringValue = self.viewModel.login;
 	self.passwordField.stringValue = self.viewModel.password;
 	
 	[self.loginField.rac_textSignal subscribeNext:^(NSString *newValue) {
-		bself.viewModel.login = newValue;
+		@strongify(self);
+		self.viewModel.login = newValue;
 	}];
 	[self.passwordField.rac_textSignal subscribeNext:^(NSString *newValue) {
-		bself.viewModel.password = newValue;
+		@strongify(self);
+		self.viewModel.password = newValue;
 	}];
 	
 	RACSignal *valid = [RACSignal combineLatest:@[self.loginField.rac_textSignal, self.passwordField.rac_textSignal]
@@ -57,12 +60,13 @@
 	
 	self.loginButton.rac_command = [RACCommand commandWithCanExecuteSignal:valid];
 	[self.loginButton.rac_command subscribeNext:^(id x) {
+		@strongify(self);
 		NSAlert *alert = [NSAlert alertWithMessageText:@"Did login"
 										 defaultButton:@"Okay"
 									   alternateButton:nil
 										   otherButton:nil
-							 informativeTextWithFormat:@"Did login with %@ : %@",bself.viewModel.login,
-														bself.viewModel.password];
+							 informativeTextWithFormat:@"Did login with %@ : %@",self.viewModel.login,
+														self.viewModel.password];
 		[alert runModal];
 	}];
 }
