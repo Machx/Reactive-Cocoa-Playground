@@ -16,12 +16,15 @@
 @property(nonatomic, unsafe_unretained) IBOutlet NSTextView *resultsTextView;
 @end
 
+static NSString *const kResultFieldFont = @"Menlo";
+static CGFloat const kResultFieldFontSize = 12.0;
+
 @implementation RCPTaskViewController
 
 - (id)init
 {
     self = [super initWithNibName:NSStringFromClass([self class])
-						   bundle:nil];
+						   bundle:[NSBundle mainBundle]];
     if (!self) return nil;
 	
 	_results = [NSMutableString new];
@@ -31,7 +34,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
 	if (!self) return nil;
 	
 	_results = [NSMutableString new];
@@ -42,7 +45,7 @@
 -(void)awakeFromNib {
 	@unsafeify(self);
 	
-	[self.resultsTextView setFont:[NSFont fontWithName:@"Menlo" size:12.0]];
+	[self.resultsTextView setFont:[NSFont fontWithName:kResultFieldFont size:kResultFieldFontSize]];
 	[self.resultsTextView setAutomaticSpellingCorrectionEnabled:NO];
 	
 	self.task = [[NSTask alloc] init];
