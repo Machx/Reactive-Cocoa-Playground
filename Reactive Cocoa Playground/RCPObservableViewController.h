@@ -1,5 +1,5 @@
 //
-//  RCPSequenceViewController.h
+//  RCPObservableViewController.h
 //  Reactive Cocoa Playground
 //
 //  Created by Colin Wheeler on 3/21/13.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RCPSequenceViewController : NSViewController
+@interface RCPObservableViewController : NSViewController
 
 @end

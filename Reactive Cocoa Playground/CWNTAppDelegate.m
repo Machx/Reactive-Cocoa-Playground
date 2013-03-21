@@ -12,7 +12,7 @@
 #import "RCPNetworkViewController.h"
 #import "RCPTaskViewController.h"
 #import "RCPLoginExampleViewController.h"
-#import "RCPSequenceViewController.h"
+#import "RCPObservableViewController.h"
 
 @interface CWNTAppDelegate ()
 @property(nonatomic,retain) RCPMenuViewModel *viewModel;
@@ -22,7 +22,7 @@
 @property(nonatomic, retain) RCPNetworkViewController *networkController;
 @property(nonatomic, retain) RCPTaskViewController *taskController;
 @property(nonatomic, retain) RCPLoginExampleViewController *loginViewController;
-@property(nonatomic, retain) RCPSequenceViewController *sequenceController;
+@property(nonatomic, retain) RCPObservableViewController *sequenceController;
 @end
 
 @implementation CWNTAppDelegate
@@ -72,7 +72,7 @@
 		} else if (selectedIndex == 3) {
 			//Load Array Sequence
 			if (!self.sequenceController) {
-				self.sequenceController = [[RCPSequenceViewController alloc] init];
+				self.sequenceController = [[RCPObservableViewController alloc] init];
 			}
 			[self.viewBox setContentView:self.sequenceController.view];
 		}

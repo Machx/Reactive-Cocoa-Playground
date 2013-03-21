@@ -25,8 +25,8 @@
 		B85DF82616DAD1470008FB97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DF80616DAD1460008FB97 /* Cocoa.framework */; };
 		B85DF82E16DAD1470008FB97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B85DF82C16DAD1470008FB97 /* InfoPlist.strings */; };
 		B85DF83116DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B85DF83016DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m */; };
-		B8901E8416FB4D7900DECB33 /* RCPSequenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8901E8216FB4D7900DECB33 /* RCPSequenceViewController.m */; };
-		B8901E8516FB4D7900DECB33 /* RCPSequenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8901E8316FB4D7900DECB33 /* RCPSequenceViewController.xib */; };
+		B8901E8416FB4D7900DECB33 /* RCPObservableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8901E8216FB4D7900DECB33 /* RCPObservableViewController.m */; };
+		B8901E8516FB4D7900DECB33 /* RCPObservableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8901E8316FB4D7900DECB33 /* RCPObservableViewController.xib */; };
 		B8B4B62216DAF2B500F6830C /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */; };
 		B8FE38ED16F62DF60047170C /* NSData+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE38E416F62DF60047170C /* NSData+RACSupport.m */; };
 		B8FE38EE16F62DF60047170C /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE38E616F62DF60047170C /* NSFileHandle+RACSupport.m */; };
@@ -78,9 +78,9 @@
 		B85DF82D16DAD1470008FB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B85DF82F16DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reactive_Cocoa_PlaygroundTests.h; sourceTree = "<group>"; };
 		B85DF83016DAD1470008FB97 /* Reactive_Cocoa_PlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reactive_Cocoa_PlaygroundTests.m; sourceTree = "<group>"; };
-		B8901E8116FB4D7900DECB33 /* RCPSequenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPSequenceViewController.h; sourceTree = "<group>"; };
-		B8901E8216FB4D7900DECB33 /* RCPSequenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPSequenceViewController.m; sourceTree = "<group>"; };
-		B8901E8316FB4D7900DECB33 /* RCPSequenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPSequenceViewController.xib; sourceTree = "<group>"; };
+		B8901E8116FB4D7900DECB33 /* RCPObservableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPObservableViewController.h; sourceTree = "<group>"; };
+		B8901E8216FB4D7900DECB33 /* RCPObservableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPObservableViewController.m; sourceTree = "<group>"; };
+		B8901E8316FB4D7900DECB33 /* RCPObservableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPObservableViewController.xib; sourceTree = "<group>"; };
 		B8B4B62116DAF2B500F6830C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = External/ReactiveCocoa/ReactiveCocoaFramework/build/Release/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		B8FE38E316F62DF60047170C /* NSData+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+RACSupport.h"; path = "External/RACExtensions/NSData+RACSupport.h"; sourceTree = SOURCE_ROOT; };
 		B8FE38E416F62DF60047170C /* NSData+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RACSupport.m"; path = "External/RACExtensions/NSData+RACSupport.m"; sourceTree = SOURCE_ROOT; };
@@ -256,9 +256,9 @@
 		B8901E8016FB4D3400DECB33 /* Array Sequence Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B8901E8116FB4D7900DECB33 /* RCPSequenceViewController.h */,
-				B8901E8216FB4D7900DECB33 /* RCPSequenceViewController.m */,
-				B8901E8316FB4D7900DECB33 /* RCPSequenceViewController.xib */,
+				B8901E8116FB4D7900DECB33 /* RCPObservableViewController.h */,
+				B8901E8216FB4D7900DECB33 /* RCPObservableViewController.m */,
+				B8901E8316FB4D7900DECB33 /* RCPObservableViewController.xib */,
 			);
 			name = "Array Sequence Controller";
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 				B81E6DE616F381BB00EC38CB /* RCPNetworkViewController.xib in Resources */,
 				B81E6DED16F38EC300EC38CB /* RCPTaskViewController.xib in Resources */,
 				B8310E2716F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib in Resources */,
-				B8901E8516FB4D7900DECB33 /* RCPSequenceViewController.xib in Resources */,
+				B8901E8516FB4D7900DECB33 /* RCPObservableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +405,7 @@
 				B8FE38F116F62DF60047170C /* NSTask+RACSupport.m in Sources */,
 				B8310E2616F75A0F00BCEFF0 /* RCPLoginExampleViewController.m in Sources */,
 				B8310E2A16F75BFD00BCEFF0 /* RCPLoginViewModel.m in Sources */,
-				B8901E8416FB4D7900DECB33 /* RCPSequenceViewController.m in Sources */,
+				B8901E8416FB4D7900DECB33 /* RCPObservableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

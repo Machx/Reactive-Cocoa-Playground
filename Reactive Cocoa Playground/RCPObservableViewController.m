@@ -1,18 +1,18 @@
 //
-//  RCPSequenceViewController.m
+//  RCPObservableViewController.m
 //  Reactive Cocoa Playground
 //
 //  Created by Colin Wheeler on 3/21/13.
 //  Copyright (c) 2013 Colin Wheeler. All rights reserved.
 //
 
-#import "RCPSequenceViewController.h"
+#import "RCPObservableViewController.h"
 
-@interface RCPSequenceViewController ()
+@interface RCPObservableViewController ()
 
 @end
 
-@implementation RCPSequenceViewController
+@implementation RCPObservableViewController
 
 -(id)init {
 	self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
@@ -32,6 +32,7 @@
 }
 
 -(void)awakeFromNib {
+	//Array Sequence
 	NSArray *array = @[ @42, @54, @64, @93, @100, @102, @50 ];
 	
 	[[[array rac_sequence] signal] subscribeNext:^(id x) {
