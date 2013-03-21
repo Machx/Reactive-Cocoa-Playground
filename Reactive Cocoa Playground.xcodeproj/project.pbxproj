@@ -122,7 +122,7 @@
 				B8310E2B16F77F3A00BCEFF0 /* Network Controller */,
 				B8310E2C16F77F4D00BCEFF0 /* Task Controller */,
 				B8310E2D16F77F5800BCEFF0 /* Login Controller */,
-				B8901E8016FB4D3400DECB33 /* Array Sequence Controller */,
+				B8901E8016FB4D3400DECB33 /* Observable Controller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -253,14 +253,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B8901E8016FB4D3400DECB33 /* Array Sequence Controller */ = {
+		B8901E8016FB4D3400DECB33 /* Observable Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B8901E8116FB4D7900DECB33 /* RCPObservableViewController.h */,
 				B8901E8216FB4D7900DECB33 /* RCPObservableViewController.m */,
 				B8901E8316FB4D7900DECB33 /* RCPObservableViewController.xib */,
 			);
-			name = "Array Sequence Controller";
+			name = "Observable Controller";
 			sourceTree = "<group>";
 		};
 		B8FE38E216F62DA60047170C /* RACExtensions */ = {

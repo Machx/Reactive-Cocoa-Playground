@@ -18,7 +18,7 @@
 	_activities = @[ @"Load Network",
 				 @"Load Task",
 				  @"Load Login Example",
-				  @"Load Array Sequence"
+				  @"Load Observables"
 				 ];
 	
     return self;
