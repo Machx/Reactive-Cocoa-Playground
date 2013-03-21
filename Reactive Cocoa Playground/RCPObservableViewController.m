@@ -40,6 +40,20 @@
 	} completed:^{
 		NSLog(@"Completed Enumeration");
 	}];
+	
+	//Observable that returns immediately
+	[[RACSignal return:@4] subscribeNext:^(id x) {
+		NSLog(@"Return Obserable received: %@",x);
+	} completed:^{
+		NSLog(@"Return Observable completed");
+	}];
+	
+	//Empty Signal
+	[[RACSignal empty] subscribeNext:^(id x) {
+		NSLog(@"Empty Signal Received: %@",x);
+	} completed:^{
+		NSLog(@"Empty Signal Completed");
+	}];
 }
 
 @end
