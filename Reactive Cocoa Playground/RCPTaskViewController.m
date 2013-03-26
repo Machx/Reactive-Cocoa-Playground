@@ -43,7 +43,7 @@ static CGFloat const kResultFieldFontSize = 12.0;
 }
 
 -(void)awakeFromNib {
-	//@unsafeify(self); uncomment if using 1st method...
+	@unsafeify(self);
 	
 	[self.resultsTextView setFont:[NSFont fontWithName:kResultFieldFont size:kResultFieldFontSize]];
 	[self.resultsTextView setAutomaticSpellingCorrectionEnabled:NO];
@@ -88,16 +88,19 @@ static CGFloat const kResultFieldFontSize = 12.0;
 		NSString *result = [[NSString alloc] initWithData:x
 												 encoding:NSUTF8StringEncoding];
 		[[RACScheduler mainThreadScheduler] schedule:^{
+			@strongify(self);
 			[self.results appendString:result];
 			[self.resultsTextView setString:self.results];
 		}];
 	} error:^(NSError *error) {
 		[[RACScheduler mainThreadScheduler] schedule:^{
+			@strongify(self);
 			[self.results appendString:[error description]];
 			[self.resultsTextView setString:self.results];
 		}];
 	} completed:^{
 		[[RACScheduler mainThreadScheduler] schedule:^{
+			@strongify(self);
 			[self.results appendString:@"\n\n...Task Finished."];
 			[self.resultsTextView setString:self.results];
 		}];
