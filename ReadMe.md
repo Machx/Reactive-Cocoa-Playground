@@ -2,7 +2,7 @@
 
 This project is a collection of useful and sometimes experimental ReactiveCocoa code. 
 
-When opening this open the ReactiveCocoa Playground workspace instead of the Xcode Project file.
+When opening this open the ReactiveCocoa Playground workspace instead of the Xcode Project file. This project also uses git submodules so after you have checked the project out you will need to run `git submodule update -i --recursive`.
 
 ## License
 
