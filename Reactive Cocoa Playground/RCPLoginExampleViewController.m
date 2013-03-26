@@ -41,17 +41,12 @@
 -(void)awakeFromNib {
 	@unsafeify(self);
 	
-	self.loginField.stringValue = self.viewModel.login;
-	self.passwordField.stringValue = self.viewModel.password;
-	
-	[self.loginField.rac_textSignal subscribeNext:^(NSString *newValue) {
-		@strongify(self);
-		self.viewModel.login = newValue;
-	}];
-	[self.passwordField.rac_textSignal subscribeNext:^(NSString *newValue) {
-		@strongify(self);
-		self.viewModel.password = newValue;
-	}];
+	[self.loginField rac_bind:NSValueBinding
+					 toObject:self
+				  withKeyPath:@keypath(self.viewModel.login)];
+	[self.passwordField rac_bind:NSValueBinding
+						toObject:self
+					 withKeyPath:@keypath(self.viewModel.password)];
 	
 	RACSignal *valid = [RACSignal combineLatest:@[self.loginField.rac_textSignal, self.passwordField.rac_textSignal]
 										 reduce:^id(NSString *login, NSString *password) {
