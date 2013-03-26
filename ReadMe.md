@@ -4,6 +4,17 @@ This project is a collection of useful and sometimes experimental ReactiveCocoa 
 
 When opening this open the ReactiveCocoa Playground workspace instead of the Xcode Project file. This project also uses git submodules so after you have checked the project out you will need to run `git submodule update -i --recursive`.
 
+## Paterns Demonstrated
+
+This project demonstrates several things you can do with ReactiveCocoa.
+
+ * Creating a RACSignal, sending -next, -error & completed
+ * Utilizing NSTask with ReactiveCocoa
+ * Using RACSignals to receive events from AppKit controls
+ * Using RACSignals to enable and disable controls
+ * RAC AppKit bindings
+ * RAC Signal sequences
+
 ## License
 
 All ReactiveCocoa Playground Code is licensed under the MIT License
