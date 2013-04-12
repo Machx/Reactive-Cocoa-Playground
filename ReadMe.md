@@ -14,6 +14,7 @@ This project demonstrates several things you can do with ReactiveCocoa.
  * Using RACSignals to enable and disable controls
  * RAC AppKit bindings
  * RAC Signal sequences
+ * RACSignal Timer Interval
 
 ## License
 
@@ -37,3 +38,4 @@ NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
