@@ -13,6 +13,7 @@
 #import "RCPTaskViewController.h"
 #import "RCPLoginExampleViewController.h"
 #import "RCPObservableViewController.h"
+#import "RCPTimerViewController.h"
 
 @interface CWNTAppDelegate ()
 @property(nonatomic,retain) RCPMenuViewModel *viewModel;
@@ -23,6 +24,7 @@
 @property(nonatomic, retain) RCPTaskViewController *taskController;
 @property(nonatomic, retain) RCPLoginExampleViewController *loginViewController;
 @property(nonatomic, retain) RCPObservableViewController *sequenceController;
+@property(nonatomic, retain) RCPTimerViewController *timerController;
 @end
 
 @implementation CWNTAppDelegate
@@ -75,6 +77,12 @@
 				self.sequenceController = [[RCPObservableViewController alloc] init];
 			}
 			[self.viewBox setContentView:self.sequenceController.view];
+		} else if (selectedIndex == 4) {
+			//Load Timer
+			if(!self.timerController) {
+				self.timerController = [[RCPTimerViewController alloc] init];
+			}
+			[self.viewBox setContentView:self.timerController.view];
 		}
 	}];
 	
