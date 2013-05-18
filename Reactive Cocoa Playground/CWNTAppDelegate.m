@@ -52,37 +52,46 @@
 	[self.menuButton.rac_command subscribeNext:^(NSPopUpButton *button) {
 		@strongify(self);
 		NSUInteger selectedIndex = button.indexOfSelectedItem;
-		if (selectedIndex == 0) {
-			//Load Network
-			if (!self.networkController) {
-				self.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
-			}
-			[self.viewBox setContentView:self.networkController.view];
-			
-		} else if (selectedIndex == 1) {
-			//Load Task
-			if (!self.taskController) {
-				self.taskController = [[RCPTaskViewController alloc] init];
-			}
-			[self.viewBox setContentView:self.taskController.view];
-		} else if (selectedIndex == 2) {
-			//Load Login Example
-			if (!self.loginViewController) {
-				self.loginViewController = [[RCPLoginExampleViewController alloc] init];
-			}
-			[self.viewBox setContentView:self.loginViewController.view];
-		} else if (selectedIndex == 3) {
-			//Load Array Sequence
-			if (!self.sequenceController) {
-				self.sequenceController = [[RCPObservableViewController alloc] init];
-			}
-			[self.viewBox setContentView:self.sequenceController.view];
-		} else if (selectedIndex == 4) {
-			//Load Timer
-			if(!self.timerController) {
-				self.timerController = [[RCPTimerViewController alloc] init];
-			}
-			[self.viewBox setContentView:self.timerController.view];
+		switch (selectedIndex) {
+			case 0:
+				//Load Network
+				if (!self.networkController) {
+					self.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
+				}
+				[self.viewBox setContentView:self.networkController.view];
+				break;
+			case 1:
+				//Load Task
+				if (!self.taskController) {
+					self.taskController = [[RCPTaskViewController alloc] init];
+				}
+				[self.viewBox setContentView:self.taskController.view];
+				break;
+			case 2:
+				//Load Login Example
+				if (!self.loginViewController) {
+					self.loginViewController = [[RCPLoginExampleViewController alloc] init];
+				}
+				[self.viewBox setContentView:self.loginViewController.view];
+				break;
+			case 3:
+				//Load Array Sequence
+				if (!self.sequenceController) {
+					self.sequenceController = [[RCPObservableViewController alloc] init];
+				}
+				[self.viewBox setContentView:self.sequenceController.view];
+				break;
+			case 4:
+				//Load Timer
+				if(!self.timerController) {
+					self.timerController = [[RCPTimerViewController alloc] init];
+				}
+				[self.viewBox setContentView:self.timerController.view];
+				break;
+			default:
+				NSLog(@"%s: encountered unhandled menu selection (%lu:%@)",
+					  __PRETTY_FUNCTION__,selectedIndex,button.titleOfSelectedItem);
+				break;
 		}
 	}];
 	
