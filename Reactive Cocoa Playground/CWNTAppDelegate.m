@@ -27,6 +27,14 @@
 @property(nonatomic, retain) RCPTimerViewController *timerController;
 @end
 
+enum RCPMenuSelection : NSUInteger {
+	kNetworkMenuItem = 0,
+	kTaskMenuItem,
+	kLoginMenuItem,
+	kSequenceMenuItem,
+	kTimerMenuItem
+};
+
 @implementation CWNTAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -53,35 +61,35 @@
 		@strongify(self);
 		NSUInteger selectedIndex = button.indexOfSelectedItem;
 		switch (selectedIndex) {
-			case 0:
+			case kNetworkMenuItem:
 				//Load Network
 				if (!self.networkController) {
 					self.networkController = [[RCPNetworkViewController alloc] initWithURLAddress:@"http://www.google.com"];
 				}
 				[self.viewBox setContentView:self.networkController.view];
 				break;
-			case 1:
+			case kTaskMenuItem:
 				//Load Task
 				if (!self.taskController) {
 					self.taskController = [[RCPTaskViewController alloc] init];
 				}
 				[self.viewBox setContentView:self.taskController.view];
 				break;
-			case 2:
+			case kLoginMenuItem:
 				//Load Login Example
 				if (!self.loginViewController) {
 					self.loginViewController = [[RCPLoginExampleViewController alloc] init];
 				}
 				[self.viewBox setContentView:self.loginViewController.view];
 				break;
-			case 3:
+			case kSequenceMenuItem:
 				//Load Array Sequence
 				if (!self.sequenceController) {
 					self.sequenceController = [[RCPObservableViewController alloc] init];
 				}
 				[self.viewBox setContentView:self.sequenceController.view];
 				break;
-			case 4:
+			case kTimerMenuItem:
 				//Load Timer
 				if(!self.timerController) {
 					self.timerController = [[RCPTimerViewController alloc] init];
