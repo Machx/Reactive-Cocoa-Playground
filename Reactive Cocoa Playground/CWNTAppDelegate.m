@@ -27,14 +27,6 @@
 @property(nonatomic, retain) RCPTimerViewController *timerController;
 @end
 
-enum RCPMenuSelection : NSUInteger {
-	kNetworkMenuItem = 0,
-	kTaskMenuItem,
-	kLoginMenuItem,
-	kSequenceMenuItem,
-	kTimerMenuItem
-};
-
 @implementation CWNTAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+enum RCPMenuSelection : NSUInteger {
+	kNetworkMenuItem = 0,
+	kTaskMenuItem,
+	kLoginMenuItem,
+	kSequenceMenuItem,
+	kTimerMenuItem
+};
+
 @interface RCPMenuViewModel : NSObject
 
 @property(nonatomic,retain) NSArray *activities;
