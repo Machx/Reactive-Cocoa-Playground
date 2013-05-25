@@ -39,9 +39,9 @@
 	@unsafeify(self);
 	
 	//Array Sequence
-	NSArray *array = @[ @42, @54, @64, @93, @100, @102, @50 ];
+	NSArray *numbers = @[ @42, @54, @64, @93, @100, @102, @50 ];
 	
-	[[[array rac_sequence] signal] subscribeNext:^(id x) {
+	[[[numbers rac_sequence] signal] subscribeNext:^(id x) {
 		@strongify(self)
 		@synchronized(self.result) {
 			[self.result appendFormat:@"Next Number: %@\n", x];
