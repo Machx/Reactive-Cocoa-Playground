@@ -55,6 +55,23 @@
 		}
 	}];
 	
+	NSArray *numbers2 = @[ @5, @15, @30, @55, @92 ];
+	NSArray *strings = @[ @"Zangetsu", @"Zabimaru", @"Tenken", @"Senbonzakura" ];
+	
+	RACSequence *numbersSequence = numbers2.rac_sequence;
+	RACSequence *stringsSequence = strings.rac_sequence;
+	RACSequence *concatenatedSequence = [numbersSequence concat:stringsSequence];
+	
+	RACSignal *concatenatedSignal = [[concatenatedSequence signal] deliverOn:[RACScheduler mainThreadScheduler]];
+	
+	[concatenatedSignal subscribeNext:^(id x) {
+		@strongify(self);
+		@synchronized(self.result) {
+			[self.result appendFormat:@"Concatenated Sequence: %@\n",x];
+			[self.resultField setString:self.result];
+		}
+	}];
+	
 	//Observable that returns immediately
 	[[RACSignal return:@4] subscribeNext:^(id x) {
 		@strongify(self);
