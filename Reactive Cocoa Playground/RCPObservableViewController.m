@@ -55,6 +55,11 @@
 		}
 	}];
 	
+	/**
+	 Demonstrate concatenated sequence
+	 Create 2 arrays of objects and concatenate them together and 
+	 subscribe to the result of that concatenation
+	 */
 	NSArray *numbers2 = @[ @5, @15, @30, @55, @92 ];
 	NSArray *strings = @[ @"Zangetsu", @"Zabimaru", @"Tenken", @"Senbonzakura" ];
 	
