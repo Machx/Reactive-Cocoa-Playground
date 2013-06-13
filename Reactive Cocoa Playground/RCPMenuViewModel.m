@@ -8,6 +8,12 @@
 
 #import "RCPMenuViewModel.h"
 
+static NSString * const kNetworkItem = @"Load Network";
+static NSString * const kTaskItem = @"Load Task";
+static NSString * const kLoginItem = @"Load Login Example";
+static NSString * const kObservablesItem = @"Load Observables";
+static NSString * const kTimerIntervalItem = @"Time Invterval";
+
 @implementation RCPMenuViewModel
 
 - (id)init
@@ -15,11 +21,11 @@
     self = [super init];
     if (!self) return nil;
 	
-	_activities = @[ @"Load Network",
-				 @"Load Task",
-				  @"Load Login Example",
-				  @"Load Observables",
-				  @"Time Interval"
+	_activities = @[ kNetworkItem,
+				 kTaskItem,
+				  kLoginItem,
+				  kObservablesItem,
+				  kTimerIntervalItem
 				 ];
 	
     return self;
