@@ -19,7 +19,7 @@ static NSString * const kTimerIntervalItem = @"Time Invterval";
 - (id)init
 {
     self = [super init];
-    if (!self) return nil;
+    if (self == nil) return nil;
 	
 	_activities = @[ kNetworkItem,
 				 kTaskItem,
