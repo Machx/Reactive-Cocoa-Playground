@@ -7,9 +7,11 @@
 //
 
 #import "RCPAsyncViewController.h"
+#import <ReactiveCocoa/EXTScope.h>
 
 @interface RCPAsyncViewController ()
-
+@property(copy,nonatomic) NSString *pilotName;
+@property(copy,nonatomic) NSNumber *pilotUnitNumber;
 @end
 
 @implementation RCPAsyncViewController
@@ -22,6 +24,45 @@
     }
     
     return self;
+}
+
+-(void)awakeFromNib {
+	@unsafeify(self);
+	[[RACScheduler scheduler] schedule:^{
+		[[[RACSignal merge:@[ [self getNameString], [self getUnitNumber] ]] deliverOn:[RACScheduler scheduler]]
+		 subscribeCompleted:^{
+			 [[RACScheduler mainThreadScheduler] schedule:^{
+				 @strongify(self);
+				 NSLog(@"Fetched Pilot: %@ of Unit %@",self.pilotName,self.pilotUnitNumber);
+			 }];
+		 }];
+	}];
+}
+
+-(RACSignal *)getNameString {
+	@unsafeify(self);
+	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		@strongify(self);
+		sleep(1);
+		self.pilotName = @"Asuka";
+		[subscriber sendNext:self.pilotName];
+		[subscriber sendCompleted];
+		
+		return [RACDisposable disposableWithBlock:^{ }];
+	}];
+}
+
+-(RACSignal *)getUnitNumber {
+	@unsafeify(self);
+	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		@strongify(self);
+		sleep(2);
+		self.pilotUnitNumber = @2;
+		[subscriber sendNext:self.pilotUnitNumber];
+		[subscriber sendCompleted];
+		
+		return [RACDisposable disposableWithBlock:^{ }];
+	}];
 }
 
 @end
