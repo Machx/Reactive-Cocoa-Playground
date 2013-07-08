@@ -15,6 +15,8 @@
 		B8310E2616F75A0F00BCEFF0 /* RCPLoginExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8310E2416F75A0F00BCEFF0 /* RCPLoginExampleViewController.m */; };
 		B8310E2716F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8310E2516F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib */; };
 		B8310E2A16F75BFD00BCEFF0 /* RCPLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8310E2916F75BFD00BCEFF0 /* RCPLoginViewModel.m */; };
+		B839053F178B0C36007EA34F /* RCPAsyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B839053D178B0C36007EA34F /* RCPAsyncViewController.m */; };
+		B8390540178B0C36007EA34F /* RCPAsyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B839053E178B0C36007EA34F /* RCPAsyncViewController.xib */; };
 		B85DF80716DAD1460008FB97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DF80616DAD1460008FB97 /* Cocoa.framework */; };
 		B85DF81116DAD1460008FB97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B85DF80F16DAD1460008FB97 /* InfoPlist.strings */; };
 		B85DF81316DAD1460008FB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B85DF81216DAD1460008FB97 /* main.m */; };
@@ -61,6 +63,9 @@
 		B8310E2516F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPLoginExampleViewController.xib; sourceTree = "<group>"; };
 		B8310E2816F75BFD00BCEFF0 /* RCPLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPLoginViewModel.h; sourceTree = "<group>"; };
 		B8310E2916F75BFD00BCEFF0 /* RCPLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPLoginViewModel.m; sourceTree = "<group>"; };
+		B839053C178B0C36007EA34F /* RCPAsyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPAsyncViewController.h; sourceTree = "<group>"; };
+		B839053D178B0C36007EA34F /* RCPAsyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPAsyncViewController.m; sourceTree = "<group>"; };
+		B839053E178B0C36007EA34F /* RCPAsyncViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPAsyncViewController.xib; sourceTree = "<group>"; };
 		B85DF80316DAD1460008FB97 /* Reactive Cocoa Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactive Cocoa Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85DF80616DAD1460008FB97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B85DF80916DAD1460008FB97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +134,7 @@
 				B8310E2D16F77F5800BCEFF0 /* Login Controller */,
 				B8901E8016FB4D3400DECB33 /* Observable Controller */,
 				B8DDC84D17186A1100E4EF70 /* Timer Controller */,
+				B839053B178B0BFF007EA34F /* Async Controller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -172,6 +178,16 @@
 				B8310E2516F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib */,
 			);
 			name = "Login Controller";
+			sourceTree = "<group>";
+		};
+		B839053B178B0BFF007EA34F /* Async Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B839053C178B0C36007EA34F /* RCPAsyncViewController.h */,
+				B839053D178B0C36007EA34F /* RCPAsyncViewController.m */,
+				B839053E178B0C36007EA34F /* RCPAsyncViewController.xib */,
+			);
+			name = "Async Controller";
 			sourceTree = "<group>";
 		};
 		B85DF7FA16DAD1460008FB97 = {
@@ -376,6 +392,7 @@
 				B8310E2716F75A0F00BCEFF0 /* RCPLoginExampleViewController.xib in Resources */,
 				B8901E8516FB4D7900DECB33 /* RCPObservableViewController.xib in Resources */,
 				B8DDC84C1718673400E4EF70 /* RCPTimerViewController.xib in Resources */,
+				B8390540178B0C36007EA34F /* RCPAsyncViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +441,7 @@
 				B8310E2A16F75BFD00BCEFF0 /* RCPLoginViewModel.m in Sources */,
 				B8901E8416FB4D7900DECB33 /* RCPObservableViewController.m in Sources */,
 				B8DDC84B1718673400E4EF70 /* RCPTimerViewController.m in Sources */,
+				B839053F178B0C36007EA34F /* RCPAsyncViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
