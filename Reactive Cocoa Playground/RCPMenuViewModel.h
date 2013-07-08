@@ -13,7 +13,8 @@ enum RCPMenuSelection : NSUInteger {
 	kTaskMenuItem,
 	kLoginMenuItem,
 	kSequenceMenuItem,
-	kTimerMenuItem
+	kTimerMenuItem,
+	kAsyncMenuItem
 };
 
 @interface RCPMenuViewModel : NSObject

@@ -13,6 +13,7 @@ static NSString * const kTaskItem = @"Load Task";
 static NSString * const kLoginItem = @"Load Login Example";
 static NSString * const kObservablesItem = @"Load Observables";
 static NSString * const kTimerIntervalItem = @"Time Invterval";
+static NSString * const kAsyncItem = @"Aynchronous Work";
 
 @implementation RCPMenuViewModel
 
@@ -25,7 +26,8 @@ static NSString * const kTimerIntervalItem = @"Time Invterval";
 				 kTaskItem,
 				  kLoginItem,
 				  kObservablesItem,
-				  kTimerIntervalItem
+				  kTimerIntervalItem,
+				  kAsyncItem
 				 ];
 	
     return self;
