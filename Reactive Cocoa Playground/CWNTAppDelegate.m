@@ -14,6 +14,7 @@
 #import "RCPLoginExampleViewController.h"
 #import "RCPObservableViewController.h"
 #import "RCPTimerViewController.h"
+#import "RCPAsyncViewController.h"
 
 @interface CWNTAppDelegate ()
 @property(nonatomic,retain) RCPMenuViewModel *viewModel;
@@ -25,6 +26,7 @@
 @property(nonatomic, retain) RCPLoginExampleViewController *loginViewController;
 @property(nonatomic, retain) RCPObservableViewController *sequenceController;
 @property(nonatomic, retain) RCPTimerViewController *timerController;
+@property(nonatomic, retain) RCPAsyncViewController *asyncController;
 @end
 
 @implementation CWNTAppDelegate
@@ -87,6 +89,12 @@
 					self.timerController = [[RCPTimerViewController alloc] init];
 				}
 				[self.viewBox setContentView:self.timerController.view];
+				break;
+			case kAsyncMenuItem:
+				if (self.asyncController == nil) {
+					self.asyncController = [[RCPAsyncViewController alloc] init];
+				}
+				[self.viewBox setContentView:self.asyncController.view];
 				break;
 			default:
 				NSLog(@"%s: encountered unhandled menu selection (%lu:%@)",
