@@ -29,7 +29,7 @@
 -(void)awakeFromNib {
 	@unsafeify(self);
 	[[RACScheduler scheduler] schedule:^{
-		[[[RACSignal merge:@[ [self getNameString], [self getUnitNumber] ]] deliverOn:[RACScheduler scheduler]]
+		[[RACSignal merge:@[ [self getNameString], [self getUnitNumber] ]]
 		 subscribeCompleted:^{
 			 [[RACScheduler mainThreadScheduler] schedule:^{
 				 @strongify(self);
